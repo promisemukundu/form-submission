@@ -7,7 +7,7 @@ import { Form } from "react-bootstrap";
 const Forms = () => {
   const navigate = useNavigate();
 
-  const url = "http://192.168.8.158:8001/api/login";
+  const url = "http://192.168.8.158:8000/api/login";
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -29,8 +29,7 @@ const Forms = () => {
     })
       .then((response) => {
         console.log(response.data);
-
-        navigate("");
+        navigate("/createPanics");
       })
       .catch((error) => {
         setError(error.message);
@@ -63,7 +62,7 @@ const Forms = () => {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" onClick={submitHandler}>
           Submit
         </Button>
       </Form>
