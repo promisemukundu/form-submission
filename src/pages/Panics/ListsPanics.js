@@ -1,8 +1,7 @@
 import React from "react";
-import PanicList from "../../components/PanicList";
 
 const ListsPanics = () => {
-  return <PanicList />;
+  return <div>kkkkk</div>;
 };
 
 export default ListsPanics;
