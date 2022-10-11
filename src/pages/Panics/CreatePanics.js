@@ -2,7 +2,8 @@ import Axios from "axios";
 import React, { useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import { Form } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
 
 const FormPanic = () => {
   const navigate = useNavigate();
@@ -53,6 +54,17 @@ const FormPanic = () => {
   return (
     <div>
       <Container>
+        <Navbar>
+          <Container>
+            <Navbar.Brand> Send Panic</Navbar.Brand>
+            <Navbar.Toggle />
+            <Navbar.Collapse className="justify-content-end">
+              <Link to="/listsPanics">
+                <Button variant="primary">List Panics</Button>
+              </Link>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
         <Form onSubmit={submitHandler}>
           <h2>Panic Details</h2>
           <Form.Group className="mb-3" controlId="formBasicEmail">
